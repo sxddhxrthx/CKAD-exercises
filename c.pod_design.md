@@ -4,7 +4,7 @@
 ## Labels and annotations
 kubernetes.io > Documentation > Concepts > Overview > [Labels and Selectors](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#label-selectors)
 
-### Create 3 pods with names nginx1,nginx2,nginx3. All of them should have the label app=v1
+### Create 3 pods with names nginx1,nginx2,nginx3. All of them should have the label app=v1 ✅
 
 <details><summary>show</summary>
 <p>
@@ -20,7 +20,7 @@ for i in `seq 1 3`; do kubectl run nginx$i --image=nginx -l app=v1 ; done
 </p>
 </details>
 
-### Show all labels of the pods
+### Show all labels of the pods ✅
 
 <details><summary>show</summary>
 <p>
@@ -32,7 +32,7 @@ kubectl get po --show-labels
 </p>
 </details>
 
-### Change the labels of pod 'nginx2' to be app=v2
+### Change the labels of pod 'nginx2' to be app=v2 ✅
 
 <details><summary>show</summary>
 <p>
@@ -44,7 +44,7 @@ kubectl label po nginx2 app=v2 --overwrite
 </p>
 </details>
 
-### Get the label 'app' for the pods (show a column with APP labels)
+### Get the label 'app' for the pods (show a column with APP labels) ✅
 
 <details><summary>show</summary>
 <p>
@@ -58,7 +58,7 @@ kubectl get po --label-columns=app
 </p>
 </details>
 
-### Get only the 'app=v2' pods
+### Get only the 'app=v2' pods ✅
 
 <details><summary>show</summary>
 <p>
@@ -74,7 +74,7 @@ kubectl get po --selector=app=v2
 </p>
 </details>
 
-### Remove the 'app' label from the pods we created before
+### Remove the 'app' label from the pods we created before ✅
 
 <details><summary>show</summary>
 <p>
@@ -90,7 +90,7 @@ kubectl label po -l app app-
 </p>
 </details>
 
-### Create a pod that will be deployed to a Node that has the label 'accelerator=nvidia-tesla-p100'
+### Create a pod that will be deployed to a Node that has the label 'accelerator=nvidia-tesla-p100' ✅
 
 <details><summary>show</summary>
 <p>
@@ -148,7 +148,7 @@ spec:
 </p>
 </details>
 
-### Annotate pods nginx1, nginx2, nginx3 with "description='my description'" value
+### Annotate pods nginx1, nginx2, nginx3 with "description='my description'" value ✅
 
 <details><summary>show</summary>
 <p>
@@ -165,7 +165,7 @@ kubectl annotate po nginx{1..3} description='my description'
 </p>
 </details>
 
-### Check the annotations for pod nginx1
+### Check the annotations for pod nginx1 ✅
 
 <details><summary>show</summary>
 <p>
@@ -187,7 +187,7 @@ As an alternative to using `| grep` you can use jsonPath like `kubectl get po ng
 </p>
 </details>
 
-### Remove the annotations for these three pods
+### Remove the annotations for these three pods ✅
 
 <details><summary>show</summary>
 <p>
@@ -199,7 +199,7 @@ kubectl annotate po nginx{1..3} description-
 </p>
 </details>
 
-### Remove these pods to have a clean state in your cluster
+### Remove these pods to have a clean state in your cluster ✅
 
 <details><summary>show</summary>
 <p>
@@ -215,7 +215,7 @@ kubectl delete po nginx{1..3}
 
 kubernetes.io > Documentation > Concepts > Workloads > Controllers > [Deployments](https://kubernetes.io/docs/concepts/workloads/controllers/deployment)
 
-### Create a deployment with image nginx:1.18.0, called nginx, having 2 replicas, defining port 80 as the port that this container exposes (don't create a service for this deployment)
+### Create a deployment with image nginx:1.18.0, called nginx, having 2 replicas, defining port 80 as the port that this container exposes (don't create a service for this deployment) ✅
 
 <details><summary>show</summary>
 <p>
@@ -244,7 +244,7 @@ kubectl create deploy nginx --image=nginx:1.18.0 --replicas=2 --port=80
 </p>
 </details>
 
-### View the YAML of this deployment
+### View the YAML of this deployment ✅
 
 <details><summary>show</summary>
 <p>
@@ -256,7 +256,7 @@ kubectl get deploy nginx -o yaml
 </p>
 </details>
 
-### View the YAML of the replica set that was created by this deployment
+### View the YAML of the replica set that was created by this deployment ✅
 
 <details><summary>show</summary>
 <p>
@@ -273,7 +273,7 @@ kubectl get rs nginx-7bf7478b77 -o yaml
 </p>
 </details>
 
-### Get the YAML for one of the pods
+### Get the YAML for one of the pods ✅
 
 <details><summary>show</summary>
 <p>
@@ -289,7 +289,7 @@ kubectl get po nginx-7bf7478b77-gjzp8 -o yaml
 </p>
 </details>
 
-### Check how the deployment rollout is going
+### Check how the deployment rollout is going ✅
 
 <details><summary>show</summary>
 <p>
