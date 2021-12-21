@@ -148,7 +148,7 @@ spec:
 </p>
 </details>
 
-### Annotate pods nginx1, nginx2, nginx3 with "description='my description'" value ✅
+### Annotate pods nginx1, nginx2, nginx3 with "description='my description'" value ❌
 
 <details><summary>show</summary>
 <p>
