@@ -301,7 +301,7 @@ kubectl rollout status deploy nginx
 </p>
 </details>
 
-### Update the nginx image to nginx:1.19.8
+### Update the nginx image to nginx:1.19.8 ✅
 
 <details><summary>show</summary>
 <p>
@@ -317,7 +317,7 @@ The syntax of the 'kubectl set image' command is `kubectl set image (-f FILENAME
 </p>
 </details>
 
-### Check the rollout history and confirm that the replicas are OK
+### Check the rollout history and confirm that the replicas are OK ✅
 
 <details><summary>show</summary>
 <p>
@@ -332,7 +332,7 @@ kubectl get po
 </p>
 </details>
 
-### Undo the latest rollout and verify that new pods have the old image (nginx:1.18.0)
+### Undo the latest rollout and verify that new pods have the old image (nginx:1.18.0) ✅
 
 <details><summary>show</summary>
 <p>
@@ -347,7 +347,7 @@ kubectl describe po nginx-5ff4457d65-nslcl | grep -i image # should be nginx:1.1
 </p>
 </details>
 
-### Do an on purpose update of the deployment with a wrong image nginx:1.91
+### Do an on purpose update of the deployment with a wrong image nginx:1.91 ✅
 
 <details><summary>show</summary>
 <p>
@@ -363,7 +363,7 @@ kubectl edit deploy nginx
 </p>
 </details>
 
-### Verify that something's wrong with the rollout
+### Verify that something's wrong with the rollout ✅
 
 <details><summary>show</summary>
 <p>
@@ -378,7 +378,7 @@ kubectl get po # you'll see 'ErrImagePull' or 'ImagePullBackOff'
 </details>
 
 
-### Return the deployment to the second revision (number 2) and verify the image is nginx:1.19.8
+### Return the deployment to the second revision (number 2) and verify the image is nginx:1.19.8 ❌
 
 <details><summary>show</summary>
 <p>
@@ -392,7 +392,7 @@ kubectl rollout status deploy nginx # Everything should be OK
 </p>
 </details>
 
-### Check the details of the fourth revision (number 4)
+### Check the details of the fourth revision (number 4) ✅
 
 <details><summary>show</summary>
 <p>
@@ -404,7 +404,7 @@ kubectl rollout history deploy nginx --revision=4 # You'll also see the wrong im
 </p>
 </details>
 
-### Scale the deployment to 5 replicas
+### Scale the deployment to 5 replicas ✅
 
 <details><summary>show</summary>
 <p>
@@ -418,7 +418,7 @@ kubectl describe deploy nginx
 </p>
 </details>
 
-### Autoscale the deployment, pods between 5 and 10, targetting CPU utilization at 80%
+### Autoscale the deployment, pods between 5 and 10, targetting CPU utilization at 80% ❌
 
 <details><summary>show</summary>
 <p>
@@ -432,7 +432,7 @@ kubectl get hpa nginx
 </p>
 </details>
 
-### Pause the rollout of the deployment
+### Pause the rollout of the deployment ✅
 
 <details><summary>show</summary>
 <p>
@@ -444,7 +444,7 @@ kubectl rollout pause deploy nginx
 </p>
 </details>
 
-### Update the image to nginx:1.19.9 and check that there's nothing going on, since we paused the rollout
+### Update the image to nginx:1.19.9 and check that there's nothing going on, since we paused the rollout ✅
 
 <details><summary>show</summary>
 <p>
@@ -460,7 +460,7 @@ kubectl rollout history deploy nginx # no new revision
 </p>
 </details>
 
-### Resume the rollout and check that the nginx:1.19.9 image has been applied
+### Resume the rollout and check that the nginx:1.19.9 image has been applied ✅
 
 <details><summary>show</summary>
 <p>
@@ -474,7 +474,7 @@ kubectl rollout history deploy nginx --revision=6 # insert the number of your la
 </p>
 </details>
 
-### Delete the deployment and the horizontal pod autoscaler you created
+### Delete the deployment and the horizontal pod autoscaler you created ✅
 
 <details><summary>show</summary>
 <p>
